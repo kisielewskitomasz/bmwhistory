@@ -1,0 +1,298 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    background-color: #222;
+    background-image: url("../img/bg.png");
+    background-repeat: repeat;
+	color: #fff;
+}
+
+#header
+{
+    background-image: url("../img/content_bg.png");
+    width: 1000px;
+    height: 120px;
+    margin-top: 10px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#header_title
+{
+    width: 760px;
+    height: 120px;
+	float:left;
+	margin: auto;
+	text-align: center;
+}
+
+#header_logo_left
+{
+	width: 120px;
+    height: 120px;
+	float: left;
+	margin: auto;
+	text-align: center;
+}
+
+#header_logo_right
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+	width: 120px;
+    height: 100px;
+	float: right;
+	margin: auto;
+	
+}
+
+#content_menu
+{
+    background-image: url("../img/content_bg.png");
+    width: 170px;
+    height: 440px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+#content_main
+{
+    background-image: url("../img/content_bg.png");
+    width: 770px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: right;
+}
+
+#footer
+{
+    clear: both;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background-image: url("../img/content_bg.png");
+    width: 1000px;
+    height: 35px;
+    text-align: center;
+    
+}
+
+#footer a:link, #footer a:visited
+{
+    color:#AAA;
+}
+
+#footer a:hover, #footer a:active
+{
+    color:#FFF;
+}
+
+#content_menu ul li a
+{
+    font-size: 17px;
+    color: #777;
+    text-decoration: none;
+	text-shadow: #222 1px -1px;
+}
+
+#content_menu ul li a:hover, #content_menu ul li .active
+{
+	color: white;
+    font-style: bold;
+    text-decoration-style: bold;
+}
+
+h1 
+{
+	font-size: 30px;
+	font-family: verdana;
+}
+
+h2 
+{
+	font-size: 20px;
+	font-family: verdana;
+}
+
+h3 
+{
+	font-size: 15px;
+    font-family: verdana;
+	text-align: center;
+}
+
+h4 
+{
+	font-size: 10px;
+    font-family: verdana;
+	text-align: center;
+}
+
+#content_main p
+{
+    text-align: justify;
+}
+
+#content_main p.index
+{
+    text-align: center;
+    font-size: 18px;
+}
+
+#content_main p.pg-title
+{
+	font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#content_main p.pg-subtitle
+{
+	font-size: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+#content_main p.pg
+{
+    text-align: center;
+}
+
+#content_main p.serie-title
+{
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+}
+
+#content_main p.serie-image
+{
+    text-align: center;
+}
+
+#content_main p.section-title
+{
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+}
+
+#content_main p.to-top 
+{
+    text-align: center;
+}
+
+#content_main p.to-top a:link, #content_main p.to-top a:visited
+{
+    color:#AAA;
+}
+
+#content_main p.to-top a:hover, #content_main p.to-top a:active
+{
+    color:#FFF;
+}
+
+#content_main table
+{
+    table-layout: fixed;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+}
+
+#content_main .serie
+{
+    text-align: center;
+}
+
+#content_main .serie th
+{
+    text-align: center;
+    border: 2px solid #fff;
+}
+
+#content_main .serie td
+{
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+#content_main .serie a
+{
+    text-align: center;
+}
+
+#content_main .serie a:link, #content_main .serie a:visited
+{
+    color:#AAA;
+}
+
+#content_main .serie a:hover, #content_main .serie a:active
+{
+    color:#FFF;
+}
+
+#content_main .serie .col-1
+{
+    width: 200px;
+    text-align: center;
+}
+
+#content_main .serie .col-2
+{
+    width: 162px;
+    text-align: center;
+}
+
+#content_main .serie .col-3
+{
+    width: 200px;
+    text-align: center;
+}
+
+#content_main table#form
+{
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 0px;
+}
+
+#content_main table#gallery, #content_main table#gallery td
+{
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+}
+
+
+
+#content_main table.serie td img
+{
+    animation:disappear 4s infinite;
+}
+
+@keyframes disappear
+{
+    0% { opacity:0.0; }
+    50% { opacity:1.0; }
+    100% { opacity:0.0; }
+}
+
