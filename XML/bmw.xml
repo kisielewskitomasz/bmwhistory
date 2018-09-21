@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bmwparts>
+    <transakcja data="2016-12-04">
+        <kupujacy firma="tak" rabat="tak">
+            <nazwa_firmy>Warsztat Mirka Sp. Z o.o.</nazwa_firmy>
+            <nip>449-765-11-40</nip>
+            <imie>Mirosław</imie>
+            <nazwisko>Grzybowski</nazwisko>
+            <ulica_nr>Warsztatowa 3</ulica_nr>
+            <kod>80-455</kod>
+            <miasto>Gdynia</miasto>
+            <telefon>600-900-450</telefon>
+        </kupujacy>
+        <platnosc>
+            <przy_odbiorze>
+                <forma_platnosci>Karta platnicza</forma_platnosci>
+            </przy_odbiorze>
+        </platnosc>
+        <uwagi>Proszę o szybką realizację zamówienia, w razie niedostępnych części o telefon</uwagi>
+        <produkty>
+            <sprzeglo nr_kat="624 3158 10">
+                <producent kraj="Niemcy">
+                    <nazwa_handlowa>LUK</nazwa_handlowa>
+                    <nazwa_firmy>LuK GmbH and Co. KG</nazwa_firmy>
+                    <ulica_nr>Industriestrasse 3</ulica_nr>
+                    <kod>77815</kod>
+                    <miasto>Buhl</miasto>
+                    <link href="http://www.luk.de/">Link DE</link>
+                    <link href="http://www.luk.com/">Link ENG</link>
+                </producent>
+                <kod_silnika>M57D30</kod_silnika>
+                <kod_skrzyni>ZF F</kod_skrzyni>
+                <kod_skrzyni>ZF G</kod_skrzyni>
+                <kod_modelu>e90 e38 e39</kod_modelu>
+                <moment>450 Nm</moment>
+                <srednica>240 mm</srednica>
+                <cena>1099.00</cena>
+                <zdjecie src="img/sprzegla/LUK/624315810.jpg"/>
+            </sprzeglo>
+            <sprzeglo nr_kat="300 0951 22">
+                <producent kraj="Niemcy">
+                    <nazwa_handlowa>SACHS</nazwa_handlowa>
+                    <nazwa_firmy>S-Performance GmbH</nazwa_firmy>
+                    <ulica_nr>Ernst-Sachs-Strasse 73</ulica_nr>
+                    <kod>97424</kod>
+                    <miasto>Schweinfurt</miasto>
+                    <link href="http://www.sachsperformance.com/">Link ENG</link>
+                    <link href="http://www.sachsperformance.pl/">Link PL</link>
+                </producent>
+                <kod_silnika>M54B30</kod_silnika>
+                <kod_silnika>M540S3</kod_silnika>
+                <kod_skrzyni>ZF C</kod_skrzyni>
+                <kod_modelu>e46 e36</kod_modelu>
+                <moment>370 Nm</moment>
+                <srednica>240 mm</srednica>
+                <cena>1899.00</cena>
+                <zdjecie src="img/sprzegla/SACHS/300095122.jpg"/>
+            </sprzeglo>
+            <sprzeglo nr_kat="835 0000 87">
+                <producent kraj="Francja">
+                    <nazwa_handlowa>VALEO</nazwa_handlowa>
+                    <nazwa_firmy>Valeo Inc.</nazwa_firmy>
+                    <ulica_nr>rue Bayen 43</ulica_nr>
+                    <kod>75017</kod>
+                    <miasto>Paris</miasto>
+                    <link href="http://www.valeo.com/">Link ENG</link>
+                    <link href="http://www.valeo.pl/">Link PL</link>
+                </producent>
+                <kod_silnika>M54B22</kod_silnika>
+                <kod_silnika>M54B23</kod_silnika>
+                <kod_skrzyni>ZF D</kod_skrzyni>
+                <kod_skrzyni>ZF E</kod_skrzyni>
+                <kod_modelu>e36 e39 e60</kod_modelu>
+                <moment>300 Nm</moment>
+                <srednica>220 mm</srednica>
+                <cena>999.00</cena>
+                <zdjecie src="img/sprzegla/VALEO/835000087.jpg"/>
+            </sprzeglo>
+        </produkty>
+    </transakcja>
+    <transakcja data="2016-12-04">
+        <kupujacy firma="nie">
+            <imie>Mietek</imie>
+            <nazwisko>Blacharski</nazwisko>
+            <ulica_nr>Szara 8</ulica_nr>
+            <kod_woj wojewodztwo="Pomorskie">82-300</kod_woj>
+            <miasto>Sopot</miasto>
+            <telefon>610-340-490</telefon>
+        </kupujacy>
+        <platnosc>
+            <przy_odbiorze>
+                <forma_platnosci>Gotowka</forma_platnosci>
+            </przy_odbiorze>
+        </platnosc>
+        <uwagi>Może być paragon</uwagi>
+        <produkty>
+            <sprzeglo nr_kat="624 3158 10">
+                <producent kraj="Niemcy">
+                    <nazwa_handlowa>LUK</nazwa_handlowa>
+                    <nazwa_firmy>LuK GmbH and Co. KG</nazwa_firmy>
+                    <ulica_nr>Industriestrasse 3</ulica_nr>
+                    <kod>77815</kod>
+                    <miasto>Buhl</miasto>
+                    <link href="http://www.luk.de/">Link DE</link>
+                    <link href="http://www.luk.com/">Link ENG</link>
+                </producent>
+                <kod_silnika>M57D30</kod_silnika>
+                <kod_skrzyni>ZF F</kod_skrzyni>
+                <kod_skrzyni>ZF G</kod_skrzyni>
+                <kod_modelu>e90 e38 e39</kod_modelu>
+                <moment>450 Nm</moment>
+                <srednica>240 mm</srednica>
+                <cena>1099.00</cena>
+                <zdjecie src="img/sprzegla/LUK/624315810.jpg"/>
+            </sprzeglo>
+        </produkty>
+    </transakcja>
+
+    <transakcja data="2016-12-04">
+        <kupujacy firma="tak" rabat="nie">
+            <nazwa_firmy>Komis Janusza Sp. Z o.o.</nazwa_firmy>
+            <nip>688-412-31-41</nip>
+            <imie>Janusz</imie>
+            <nazwisko>Handlarz</nazwisko>
+            <ulica_nr>Komisowa 34</ulica_nr>
+            <kod>40-455</kod>
+            <miasto>Szczecin</miasto>
+            <telefon>730-400-255</telefon>
+        </kupujacy>
+        <platnosc>
+            <online>
+                <forma_platnosci>Przelew</forma_platnosci>
+            </online>
+        </platnosc>
+        <uwagi>Migusiem części potrzebuje, bo tyle aut z Niemiec od Turka sprowadziłem i skręciłem, że na placu się nie mieszczą!</uwagi>
+        <produkty>
+            <sprzeglo nr_kat="300 0951 22">
+                <producent kraj="Niemcy">
+                    <nazwa_handlowa>SACHS</nazwa_handlowa>
+                    <nazwa_firmy>S-Performance GmbH</nazwa_firmy>
+                    <ulica_nr>Ernst-Sachs-Strasse 73</ulica_nr>
+                    <kod>97424</kod>
+                    <miasto>Schweinfurt</miasto>
+                    <link href="http://www.sachsperformance.com/">Link ENG</link>
+                    <link href="http://www.sachsperformance.pl/">Link PL</link>
+                </producent>
+                <kod_silnika>M54B30</kod_silnika>
+                <kod_silnika>M540S3</kod_silnika>
+                <kod_skrzyni>ZF C</kod_skrzyni>
+                <kod_modelu>e46 e36</kod_modelu>
+                <moment>370 Nm</moment>
+                <srednica>240 mm</srednica>
+                <cena>1899.00</cena>
+                <zdjecie src="img/sprzegla/SACHS/300095122.jpg"/>
+            </sprzeglo>
+            <sprzeglo nr_kat="835 0000 87">
+                <producent kraj="Francja">
+                    <nazwa_handlowa>VALEO</nazwa_handlowa>
+                    <nazwa_firmy>Valeo Inc.</nazwa_firmy>
+                    <ulica_nr>rue Bayen 43</ulica_nr>
+                    <kod>75017</kod>
+                    <miasto>Paris</miasto>
+                    <link href="http://www.valeo.com/">Link ENG</link>
+                    <link href="http://www.valeo.pl/">Link PL</link>
+                </producent>
+                <kod_silnika>M54B22</kod_silnika>
+                <kod_silnika>M54B23</kod_silnika>
+                <kod_skrzyni>ZF D</kod_skrzyni>
+                <kod_skrzyni>ZF E</kod_skrzyni>
+                <kod_modelu>e36 e39 e60</kod_modelu>
+                <moment>300 Nm</moment>
+                <srednica>220 mm</srednica>
+                <cena>999.00</cena>
+                <zdjecie src="img/sprzegla/VALEO/835000087_1.jpg"/>
+                <zdjecie src="img/sprzegla/VALEO/835000087_2.jpg"/>
+                <zdjecie src="img/sprzegla/VALEO/835000087_3.jpg"/>
+                <zdjecie src="img/sprzegla/VALEO/835000087_4.jpg"/>
+            </sprzeglo>
+        </produkty>
+    </transakcja>
+
+    <dostawa data="2016-11-29">
+        <podzespol nr_kat="624 3158 10">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>LUK</nazwa_handlowa>
+            <ilosc>2</ilosc>
+        </podzespol>
+        <podzespol nr_kat="300 0951 22">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>SACHS</nazwa_handlowa>
+            <ilosc>4</ilosc>
+        </podzespol>
+        <podzespol nr_kat="835 0000 87">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>VALEO</nazwa_handlowa>
+            <ilosc>1</ilosc>
+        </podzespol>
+    </dostawa>
+
+    <dostawa data="2016-12-01">
+        <podzespol nr_kat="835 0000 87">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>VALEO</nazwa_handlowa>
+            <ilosc>1</ilosc>
+        </podzespol>
+    </dostawa>
+
+    <dostawa data="2016-12-06">
+        <podzespol nr_kat="624 3158 10">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>LUK</nazwa_handlowa>
+            <ilosc>2</ilosc>
+        </podzespol>
+        <podzespol nr_kat="300 0951 22">
+            <rodzaj>Sprzęgło</rodzaj>
+            <nazwa_handlowa>SACHS</nazwa_handlowa>
+            <ilosc>5</ilosc>
+        </podzespol>
+    </dostawa>
+</bmwparts>

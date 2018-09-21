@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="bmwparts" type="bmwparts_typ"/>
+
+    <xs:complexType name="bmwparts_typ">
+        <xs:sequence>
+            <xs:element name="transakcja" type="transakcja_typ" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="dostawa" type="dostawa_typ" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="transakcja_typ">
+        <xs:sequence>
+            <xs:element name="kupujacy" type="kupujacy_typ"/>
+            <xs:element name="platnosc">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="przy_odbiorze" type="przy_odbiorze_typ"/>
+                        <xs:element name="online" type="online_typ"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uwagi" type="dlugi_tekst_typ"/>
+            <xs:element name="produkty" type="produkty_typ"/>
+        </xs:sequence>
+        <xs:attribute ref="data"/>
+    </xs:complexType>
+
+    <xs:complexType name="kupujacy_typ">
+        <xs:sequence>
+            <xs:element name="nazwa_firmy" type="krotki_tekst_typ" minOccurs="0"/>
+            <xs:element name="nip" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\d{3}-\d{3}-\d{2}-\d{2}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="imie" type="krotki_tekst_typ"/>
+            <xs:element name="nazwisko" type="krotki_tekst_typ"/>
+            <xs:group ref="adres"/>
+            <xs:element name="telefon">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\d{3}-\d{3}-\d{3}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="firma" type="logiczny_typ" use="required"/>
+        <xs:attribute name="rabat" type="logiczny_typ" use="optional" default="nie"/>
+    </xs:complexType>
+
+    <xs:complexType name="przy_odbiorze_typ">
+        <xs:sequence>
+            <xs:element name="forma_platnosci" type="forma_platnosci_offline_typ"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="online_typ">
+        <xs:sequence>
+            <xs:element name="forma_platnosci" type="forma_platnosci_online_typ"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="forma_platnosci_online_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Karta platnicza|Przelew"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="forma_platnosci_offline_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Karta platnicza|Gotowka"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="produkty_typ">
+        <xs:sequence>
+            <xs:element name="sprzeglo" type="sprzeglo_typ" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sprzeglo_typ">
+        <xs:sequence>
+            <xs:element name="producent" type="producent_typ"/>
+            <xs:element name="kod_silnika" type="kod_silnika_typ" maxOccurs="unbounded"/>
+            <xs:element name="kod_skrzyni" type="kod_skrzyni_typ" maxOccurs="unbounded"/>
+            <xs:element name="kod_modelu" type="kod_modelu_typ"/>
+            <xs:element name="moment" type="moment_typ"/>
+            <xs:element name="srednica" type="srednica_typ"/>
+            <xs:element name="cena" type="cena_typ"/>
+            <xs:element name="zdjecie" type="zdjecie_typ" minOccurs="0" maxOccurs="5"/>
+        </xs:sequence>
+        <xs:attribute ref="nr_kat" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="producent_typ">
+        <xs:sequence>
+            <xs:element name="nazwa_handlowa" type="nazwa_handlowa_typ"/>
+            <xs:element name="nazwa_firmy" type="krotki_tekst_typ"/>
+            <xs:group ref="adres"/>
+            <xs:element name="link" type="link_typ" minOccurs="0" maxOccurs="2"/>
+        </xs:sequence>
+        <xs:attribute name="kraj" type="kraj_typ" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="kraj_typ">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Niemcy"/>
+            <xs:enumeration value="Francja"/>
+            <xs:enumeration value="Polska"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nazwa_handlowa_typ">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LUK"/>
+            <xs:enumeration value="SACHS"/>
+            <xs:enumeration value="VALEO"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="kod_silnika_typ">
+        <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="kod_skrzyni_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2} [A-Z]{1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="kod_modelu_typ">
+        <xs:list itemType="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="moment_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3} Nm"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="srednica_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3} mm"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="cena_typ">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+            <xs:maxExclusive value="10000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="dostawa_typ">
+        <xs:sequence>
+            <xs:element name="podzespol" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="rodzaj"></xs:element>
+                        <xs:element name="nazwa_handlowa"></xs:element>
+                        <xs:element name="ilosc" type="ilosc_typ"/>
+                    </xs:all>
+                    <xs:attribute ref="nr_kat" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="data"/>
+    </xs:complexType>
+
+    <xs:simpleType name="ilosc_typ">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="logiczny_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="tak|nie"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="krotki_tekst_typ">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dlugi_tekst_typ">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="kod_pl">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}-\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="kod_woj_typ">
+        <xs:simpleContent>
+            <xs:extension base="kod_pl">
+                <xs:attribute name="wojewodztwo">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Dolnoslaskie"/>
+                            <xs:enumeration value="Kujawsko-pomorskie"/>
+                            <xs:enumeration value="Lubelskie"/>
+                            <xs:enumeration value="Lubuskie"/>
+                            <xs:enumeration value="Lodzkie"/>
+                            <xs:enumeration value="Malopolskie"/>
+                            <xs:enumeration value="Mazowieckie"/>
+                            <xs:enumeration value="Opolskie"/>
+                            <xs:enumeration value="Podkarpackie"/>
+                            <xs:enumeration value="Podlaskie"/>
+                            <xs:enumeration value="Pomorskie"/>
+                            <xs:enumeration value="Plaskie"/>
+                            <xs:enumeration value="Swietokrzyskie"/>
+                            <xs:enumeration value="Warminsko-mazurskie"/>
+                            <xs:enumeration value="Wielkopolskie"/>
+                            <xs:enumeration value="Zachodniopomorskie"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="kod_eu">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="kod">
+        <xs:simpleType>
+            <xs:union memberTypes="kod_pl kod_eu"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="miasto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="25"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:complexType name="zdjecie_typ">
+        <xs:attribute name="src" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="link_typ">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="href" type="xs:anyURI" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="nr_kat_typ">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3} \d{4} \d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:group name="adres">
+        <xs:sequence>
+            <xs:element name="ulica_nr" type="krotki_tekst_typ"/>
+                <xs:choice>
+                    <xs:element ref="kod"/>
+                    <xs:element name="kod_woj" type="kod_woj_typ"/>
+                </xs:choice>
+            <xs:element ref="miasto"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attribute name="data" type="xs:date" />
+
+    <xs:attribute name="nr_kat" type="nr_kat_typ"/>
+</xs:schema>

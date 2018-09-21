@@ -1,0 +1,127 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bmwparts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transakcja" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kupujacy">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nazwa_firmy" minOccurs="0"/>
+                    <xs:element type="xs:string" name="nip" minOccurs="0"/>
+                    <xs:element type="xs:string" name="imie"/>
+                    <xs:element type="xs:string" name="nazwisko"/>
+                    <xs:element type="xs:string" name="ulica_nr"/>
+                    <xs:element type="xs:string" name="kod" minOccurs="0"/>
+                    <xs:element name="kod_woj" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="wojewodztwo"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="miasto"/>
+                    <xs:element type="xs:string" name="telefon"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="firma" use="optional"/>
+                  <xs:attribute type="xs:string" name="rabat" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="platnosc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="przy_odbiorze" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="forma_platnosci"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="online" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="forma_platnosci"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="uwagi"/>
+              <xs:element name="produkty">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="sprzeglo" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="producent">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="nazwa_handlowa"/>
+                                <xs:element type="xs:string" name="nazwa_firmy"/>
+                                <xs:element type="xs:string" name="ulica_nr"/>
+                                <xs:element type="xs:int" name="kod"/>
+                                <xs:element type="xs:string" name="miasto"/>
+                                <xs:element name="link" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:anyURI" name="href" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="kraj" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="kod_silnika" maxOccurs="unbounded" minOccurs="0"/>
+                          <xs:element type="xs:string" name="kod_skrzyni" maxOccurs="unbounded" minOccurs="0"/>
+                          <xs:element type="xs:string" name="kod_modelu"/>
+                          <xs:element type="xs:string" name="moment"/>
+                          <xs:element type="xs:string" name="srednica"/>
+                          <xs:element type="xs:float" name="cena"/>
+                          <xs:element name="zdjecie" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="src" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="nr_kat" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:date" name="data" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dostawa" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="podzespol" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="rodzaj"/>
+                    <xs:element type="xs:string" name="nazwa_handlowa"/>
+                    <xs:element type="xs:byte" name="ilosc"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="nr_kat" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:date" name="data" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
